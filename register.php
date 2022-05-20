@@ -17,13 +17,16 @@
         if ($statement->rowCount() > 0) {
           $error = "This email is taken.";
         } else {
+          // var per fer usuarias amb rol user
+          $role = "user";
           // Insertem les dades a la base de dades
           $conn
-            ->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)")
+            ->prepare("INSERT INTO users (name, email, password, role) VALUES (:name, :email, :password, :role)")
             ->execute([
               ":name" => $_POST["name"],
               ":email" => $_POST["email"],
               ":password" => password_hash($_POST["password"], PASSWORD_BCRYPT),
+              ":role" => $role
             ]);
             
              // Comprovem que esxisteixi el correu a la base de dades

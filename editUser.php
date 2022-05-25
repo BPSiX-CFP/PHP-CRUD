@@ -1,8 +1,6 @@
 <?php
   // Importem el fitxer database.php i en conseqüencia les seves variables
   require "database.php";
-  // Crem o afafem una sessio del usuari
-  session_start();
   // En el cas que no exsiteix una sessió enviem al usuari al login.php
   if (!isset($_SESSION["user"])) {
     header("Location: login.php");

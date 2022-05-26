@@ -36,7 +36,6 @@
 
             // Associem el resultat de la query a la variable user
             $user = $statement->fetch(PDO::FETCH_ASSOC);
-
             // Iniciem sessió 
             session_start();  
             // Eliminem el password de la variable $user

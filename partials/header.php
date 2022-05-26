@@ -26,7 +26,7 @@
   <!-- Trellem la uri a partir de variables del server  -->
   <?php $uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);?>
   <!-- Fem un if per nomes carregar el script a la págian de inici -->
-  <?php if (str_contains($uri, "index.php") || $uri[-1] == '/'){?>
+  <?php if (strpos($uri, "index.php") || $uri[-1] == '/'){?>
     <script defer src="./static/js/welcome.js"></script>
   <?php } ?>
 
